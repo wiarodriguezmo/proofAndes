@@ -68,6 +68,9 @@
                 </div>
             </div>
             <div id="header-main">
+                <div class="clouds">
+                    
+                </div>
                 <div class="row">
                     <div class="col-sm-5">
                         <div id="profile">
@@ -110,7 +113,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <h2 class="title purple">Puntos <br> de competencia {{ctrl.user.points.competition.gold>0}}</h2>
+                    <h2 class="title purple">Puntos <br> de competencia</h2>
                     <div class="row" id="content-competence">
                         <div ng-if="ctrl.user.points.competition.gold>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.gold) track by $index" class="col-sm-4">
                             <img src="img/gold-medal.png" alt="">
@@ -126,12 +129,15 @@
                 <div class="col-sm-4">
                     <h2 class="title purple">Puntos <br> de habilidad</h2>
                     <div id="content-hability">
-                        <div id="abstraccion">
-                            <input type="number" min="0" max="100" value="{{ctrl.user.points.skill.abstraction}}"/>
+                        <div id="abstraccion" ng-class="ctrl.dom.abstraction">
+                            <input type="number" min="0" max="100" ng-model="ctrl.user.points.skill.abstraction" ng-change="ctrl.abstraction()"/>
                         </div>
-                        <div id="eje"></div>
-                        <div id="programacion">
-                            <input type="number" min="0" max="100" value="{{ctrl.user.points.skill.programming}}"/>
+                        <div id="eje">
+                            <div class="palo" ng-class="ctrl.dom.paloLeft"></div>
+                            <div class="palo" ng-class="ctrl.dom.paloRight"></div>
+                        </div>
+                        <div id="programacion" ng-class="ctrl.dom.programming">
+                            <input type="number" min="0" max="100" ng-model="ctrl.user.points.skill.programming" ng-change="ctrl.programming()"/>
                         </div>
                     </div>
                     <p ng-if="ctrl.user.points.skill.abstraction>50">¿Qué tal si practicas más las competencias de programación?</p>

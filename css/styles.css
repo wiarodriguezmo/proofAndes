@@ -206,7 +206,6 @@ li a.targed{
 }
 #abstraccion{
     background-image: url(../img/abstraccion.png);
-    height: 200px;
     background-repeat: no-repeat;
     position: absolute;
     height: 199px;
@@ -227,7 +226,6 @@ li a.targed{
 }
 #programacion{
     background-image: url(../img/programacion.png);
-    height: 203px;
     background-repeat: no-repeat;
     position: absolute;
     height: 203px;
@@ -275,4 +273,130 @@ footer>p:last-child {
     .menu-horizontal li a { 
         font-size: 1.3em;
     }
+}
+
+
+.clouds {
+    background: url(../img/clouds.png);
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-animation: cloud 35s linear infinite;
+    -moz-animation: cloud 35s linear infinite;
+    -o-animation: cloud 35s linear infinite;
+    /* background-repeat: no-repeat; */
+}
+  
+@-webkit-keyframes cloud {
+    0% {
+      left: 0
+    }
+    100% {
+      left: -50%
+    }
+}
+@-moz-keyframes cloud {
+    0% {
+      left: 0
+    }
+    100% {
+      left: -50%
+    }
+}
+
+.scales0 {
+    top: 6em;
+}
+.scales1 {
+    top: 7em;
+}
+.scales2 {
+    top: 8em;
+}
+.scales3 {
+    top: 9em;
+}
+.scales4 {
+    top: 10em;
+}
+.scales5 {
+    top: 11em;
+}
+.scales6 {
+    top: 12em;
+}
+
+.palo{
+    background-image: url(../img/palo.png);
+    height: 31px;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 112px;
+    z-index: -1;
+}
+
+.paloLeft0 {
+    left: -10px;
+    top: -10px;
+    transform: rotate(10deg);
+}
+.paloRight0 {
+    left: 135px;
+    transform: rotate(140deg);
+    top: -20px;
+}
+.paloLeft1 {
+    left: -10px;
+    top: -10px;
+    transform: rotate(10deg);
+}
+.paloRight1 {
+    left: 140px;
+    transform: rotate(150deg);
+    top: -10px;
+}
+.paloLeft2 {
+    left: -17px;
+}
+.paloRight2 {    
+    left: 135px;
+    transform: rotate(150deg);
+}
+.paloLeft3 {
+    left: -17px;
+}
+.paloRight3 {
+    left: 140px;
+    transform: rotate(160deg);
+}
+.paloLeft4 {
+    left: -5px;
+    transform: rotate(-20deg);
+    top: 11px;
+}
+.paloRight4 {
+    left: 135px;
+    transform: rotate(180deg);
+    top: 20px;
+}
+.paloLeft5 {
+    left: -10px;
+    transform: rotate(150deg);
+    top: 20px;
+}
+.paloRight5 {
+    left: 135px;
+    transform: rotate(190deg);
+    top: 30px;
+}
+.paloLeft6 {
+    left: -10px;
+    transform: rotate(140deg);
+    top: 40px;
+}
+.paloRight6 {
+    left: 135px;
+    transform: rotate(190deg);
+    top: 30px;
 }
