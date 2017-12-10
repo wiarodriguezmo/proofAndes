@@ -1,0 +1,87 @@
+{
+  "andres" : {
+    "faculty" : "Ingeniería de Sistemas y Computación ",
+    "name" : "William Rodríguez",
+    "pass" : 1234,
+    "points" : {
+      "experience" : 12190,
+      "competition" : {
+        "bronze" : 1,
+        "gold" : 1,
+        "silver" : 3
+      },
+      "skill" : {
+        "abstraction" : 22,
+        "programming" : 78
+      }
+    }
+  },
+  "prueba" : {
+    "faculty" : "Ingeniería de Sistemas y Computación ",
+    "name" : "Daniel Lara",
+    "pass" : 1234,
+    "points" : {
+      "competition" : {
+        "bronze" : 1,
+        "gold" : 1,
+        "silver" : 3
+      },
+      "experience" : 12190,
+      "skill" : {
+        "abstraction" : 72,
+        "programming" : 28
+      }
+    }
+  },
+  "willliam" : {
+    "faculty" : "Ingeniería de Sistemas y Computación ",
+    "name" : "William Rodríguez",
+    "pass" : 1234,
+    "points" : {
+      "competition" : {
+        "bronze" : 1,
+        "gold" : 1,
+        "silver" : 3
+      },
+      "experience" : 12190,
+      "skill" : {
+        "abstraction" : 72,
+        "programming" : 28
+      }
+    }
+  },
+  "laura" : {
+    "faculty" : "Ingeniería de Sistemas y Computación ",
+    "name" : "William Rodríguez",
+    "pass" : 1234,
+    "points" : {
+      "competition" : {
+        "bronze" : 1,
+        "gold" : 1,
+        "silver" : 3
+      },
+      "experience" : 12190,
+      "skill" : {
+        "abstraction" : 72,
+        "programming" : 28
+      }
+    }
+  },
+  "juan" : {
+    "faculty" : "Ingeniería de Sistemas y Computación ",
+    "name" : "William Rodríguez",
+    "pass" : 1234,
+    "points" : {
+      "competition" : {
+        "bronze" : 1,
+        "gold" : 1,
+        "silver" : 3
+      },
+      "experience" : 12190,
+      "skill" : {
+        "abstraction" : 72,
+        "programming" : 28
+      }
+    }
+  }
+}

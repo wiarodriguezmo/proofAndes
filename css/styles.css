@@ -85,6 +85,9 @@ ul.menu-horizontal {
 .menu-horizontal li a:hover {
     background-color: rgba(17, 17, 17, 0.37);
 }
+.menu-horizontal li .active {
+    background-color: rgba(17, 17, 17, 0.37);
+}
 
 li a.targed{
     border: 1px solid white;
@@ -132,6 +135,10 @@ li a.targed{
     font-size: 1.2em;
     margin-top: 5.8em;
     line-height: 0.8em;
+}
+#header-main img:last-child {
+    top: 7em;
+    position: absolute;
 }
 
 #points {
