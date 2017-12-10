@@ -56,6 +56,12 @@ font-family: WorkSans-Bold, Helvetica, Arial, sans-serif;
     padding: 1.3em;
 }
 
+.menu-horizontal{
+    overflow: hidden;
+}
+.menu-horizontal .icon {
+    display: none;
+}
 ul.menu-horizontal {
     list-style-type: none;
     margin: auto;
@@ -399,4 +405,51 @@ footer>p:last-child {
     left: 135px;
     transform: rotate(190deg);
     top: 30px;
+}
+
+@media (max-width: 770px) {
+    .menu-horizontal a {display: none !important;}
+    .menu-horizontal a.icon {
+        float: right;
+        display: block !important;
+    }
+    .menu-horizontal li{
+        float: right;
+    }
+    #logo1, #logo2 {
+        display: none
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .menu-horizontal.responsive {position: relative;}
+    .menu-horizontal.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .menu-horizontal.responsive li {
+        float: none;
+        display: block;
+    } 
+    .menu-horizontal.responsive li a {
+        display: block !important;
+        text-align: left;
+    }
+    #header-main img {
+        display: nones
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    #name-profile h2{
+        display: none
+    }
+    #profile img {
+        display: none
+    }
+    #points > div {
+        padding: 0
+    }
 }

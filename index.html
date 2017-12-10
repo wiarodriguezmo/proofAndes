@@ -10,6 +10,17 @@
 
             <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
             <link rel="stylesheet" href="css/styles.css">
+
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("menu-top");
+                    if (x.className === "menu-horizontal") {
+                        x.className += " responsive";
+                    } else {
+                        x.className = "menu-horizontal";
+                    }
+                }
+            </script>
     </head>
     <body ng-controller="conectateCtrl as ctrl">
         <header>
@@ -23,7 +34,7 @@
                     <div class="col-sm-3">
                         <img id="logo1" src="img/logo1.png" alt="">
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 icon">
                         <ul class="menu-horizontal" id="menu-top">
                             <li>
                                 <a href="#">
@@ -60,9 +71,15 @@
                                     Logout
                                 </a>
                             </li>
+                            <li>
+                                <a href="javascript:void(0);" 
+                                    style="font-size:15px;" class="icon" 
+                                    onclick="myFunction()">&#9776;
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 col-xs-6">
                         <img id="logo2" src="img/logo2.png" alt="">
                     </div>
                 </div>
@@ -72,7 +89,7 @@
                     
                 </div>
                 <div class="row">
-                    <div class="col-sm-5">
+                    <div class="col-sm-5 col-xs-6">
                         <div id="profile">
                             <img id="photo-profile" src="img/profile.png" alt="">
                             <div id="name-profile" class="purple">
@@ -81,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-5 col-xs-6">
                         <div id="data-user" class="purple">
                             <p>
                                 <b>Correo: {{ctrl.user.mail}}</b>
@@ -99,7 +116,7 @@
         </header>
         <div id="content">
             <div id="points" class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-6 col-md-4">
                     <h2 class="title purple">Puntos <br> de experiencia</h2>
                     <div id="content-experience">
                         <h1> {{ctrl.user.points.experience}}</h1>
@@ -112,21 +129,21 @@
                         <p>1135 puntos de experiencia te hacen falta para el siguiente nivel</p>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6 col-md-4">
                     <h2 class="title purple">Puntos <br> de competencia</h2>
                     <div class="row" id="content-competence">
-                        <div ng-if="ctrl.user.points.competition.gold>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.gold) track by $index" class="col-sm-4">
+                        <div ng-if="ctrl.user.points.competition.gold>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.gold) track by $index" class="col-sm-4 col-xs-3">
                             <img src="img/gold-medal.png" alt="">
                         </div>
-                        <div ng-if="ctrl.user.points.competition.bronze>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.bronze) track by $index" class="col-sm-4">
+                        <div ng-if="ctrl.user.points.competition.bronze>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.bronze) track by $index" class="col-sm-4 col-xs-3">
                             <img src="img/bronze-medal.png" alt="">
                         </div>
-                        <div ng-if="ctrl.user.points.competition.silver>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.silver) track by $index" class="col-sm-4">
+                        <div ng-if="ctrl.user.points.competition.silver>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.silver) track by $index" class="col-sm-4 col-xs-3">
                             <img src="img/silver-medal.png" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6 col-md-4">
                     <h2 class="title purple">Puntos <br> de habilidad</h2>
                     <div id="content-hability">
                         <div id="abstraccion" ng-class="ctrl.dom.abstraction">
