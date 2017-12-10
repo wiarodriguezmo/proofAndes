@@ -1,0 +1,165 @@
+@font-face {
+    font-family: WorkSans-Light;
+    src: url(../fonts/WorkSans-Light.ttf);
+}
+@font-face {
+    font-family: WorkSans-Regular;
+    src: url(../fonts/WorkSans-Regular.ttf);
+}
+@font-face {
+    font-family: WorkSans-Medium;
+    src: url(../fonts/WorkSans-Medium.ttf);
+}
+@font-face {
+    font-family: WorkSans-SemiBold;
+    src: url(../fonts/WorkSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: WorkSans-Bold;
+    src: url(../fonts/WorkSans-Bold.ttf);
+}
+
+* {
+    font-family: WorkSans-Regular, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+font-family: WorkSans-Bold, Helvetica, Arial, sans-serif;
+}
+b {
+    font-family: WorkSans-SemiBold, Helvetica, Arial, sans-serif;
+}
+h2, h3, h4, h5, h6{
+    font-family: WorkSans-Medium, Helvetica, Arial, sans-serif;
+    margin: 0
+}
+em, cite, blockquote {
+font-family: WorkSans-Bold, Helvetica, Arial, sans-serif;
+}
+
+#header1{
+    background-color: #6255a0;
+    align-content: right;
+    padding: 1em;
+}
+
+#social {
+    float: right;
+    padding-right: 10em;
+}
+
+#logo1 {
+    display: block;
+    margin: auto;
+    padding: 1.3em;
+}
+#logo2 {
+    display: block;
+    margin: auto;
+    padding: 1.3em;
+}
+
+ul.menu-horizontal {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    padding: 0.6em;
+}
+.menu-horizontal li {
+    float: left;
+    margin-top: 0.3em;
+}
+
+/* sólo para desktops */
+.menu-horizontal li:first-child {
+    padding-right: 2em;
+}
+.menu-horizontal li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 0.1em 0.5em;
+    text-decoration: none;
+    border-radius: 0.4em;
+    font-family: WorkSans-SemiBold, Helvetica, Arial, sans-serif;
+    font-size: 1.4em;
+}
+.menu-horizontal li a:hover {
+    background-color: rgba(17, 17, 17, 0.37);
+}
+
+li a.targed{
+    border: 1px solid white;
+}
+
+.menu-top {
+    display: block
+}
+
+#header2 {
+    background-color: #ed6c2c
+}
+
+#header-main {
+    background-color: #9fcdff;
+    height: 16em;
+}
+
+.purple {
+    color: #6255a0
+}
+
+#name-user{
+    font-size: 1.6em;
+}
+#name-profile {
+    float: right;
+    margin-top: -0.9em;
+}
+#name-profile>* {
+    padding: 0.3em
+}
+#name-profile h2{
+    font-size: 2.5em;
+}
+
+#profile {
+    padding: 4em 4em;
+}
+#profile>* {
+    float: left;
+}
+
+#data-user {
+    font-size: 1.2em;
+    margin-top: 5.8em;
+    line-height: 0.8em;
+}
+
+
+
+
+
+
+
+
+@media (min-width: 1365px){
+    .menu-horizontal li {
+        margin-top: 1em;
+    }
+    #profile {
+        padding: 4em 11em;
+    }
+}
+@media (min-width: 1775px){
+    .menu-horizontal li {
+        margin: 1em;
+    }
+}
+
+@media (max-width: 1390px){
+    .menu-horizontal li a { 
+        font-size: 1.3em;
+    }
+}
