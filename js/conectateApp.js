@@ -9,16 +9,9 @@ app.controller('conectateCtrl', function ($http, $q) {
         headers: {'Content-Type': 'application/json'}
       }).then(function successCallback(response) {
           vm.info = response.data;
-          vm.auth();
         }, function errorCallback(response) {
           console.log(response)
     });
-
-    vm.auth = () =>  {
-        vm.user = vm.info.prueba;
-        vm.user.mail = Object.keys(vm.info.prueba)[0] + "@uniandes.edu.co"; //pendiente
-        vm.calculateScales();
-    };
 
     vm.calculateScales = function() {
         vm.dom = {
@@ -51,5 +44,14 @@ app.controller('conectateCtrl', function ($http, $q) {
             vm.user.points.skill.abstraction=100;
         } else vm.user.points.skill.abstraction=100-vm.user.points.skill.programming;
         vm.calculateScales();
+    }
+
+    vm.signIn = function() {
+        vm.user = vm.info[vm.userAccount];
+        if(vm.user && vm.user.pass == vm.userPass){
+            vm.user.mail = vm.userAccount + "@uniandes.edu.co";
+            vm.isAuth = true;   
+            vm.calculateScales();
+        } else vm.hasError=true;
     }
 });

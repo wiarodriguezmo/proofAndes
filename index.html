@@ -23,150 +23,170 @@
             </script>
     </head>
     <body ng-controller="conectateCtrl as ctrl">
-        <header>
-            <div id="header1">
-                <div class="row">
-                    <img id="social" src="img/social-networks.png" alt="">
-                </div>
-            </div>
-            <div id="header2">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <img id="logo1" src="img/logo1.png" alt="">
-                    </div>
-                    <div class="col-sm-6 icon">
-                        <ul class="menu-horizontal" id="menu-top">
-                            <li>
-                                <a href="#">
-                                    Inicio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    El proyecto
-                                </a>
-                            </li>
-                            <li>
-                                <a class="active" href="#">
-                                    Perfil
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    APO 1
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    APO 2
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    De interés
-                                </a>
-                            </li>
-                            <li>
-                                <a class="targed" href="#">
-                                    Logout
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" 
-                                    style="font-size:15px;" class="icon" 
-                                    onclick="myFunction()">&#9776;
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <img id="logo2" src="img/logo2.png" alt="">
+        <div ng-if="ctrl.isAuth">
+            <header>
+                <div id="header1">
+                    <div class="row">
+                        <img id="social" src="img/social-networks.png" alt="">
                     </div>
                 </div>
-            </div>
-            <div id="header-main">
-                <div class="clouds">
-                    
+                <div id="header2">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img id="logo1" src="img/logo1.png" alt="">
+                        </div>
+                        <div class="col-sm-6 icon">
+                            <ul class="menu-horizontal" id="menu-top">
+                                <li>
+                                    <a href="#">
+                                        Inicio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        El proyecto
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="active" href="#">
+                                        Perfil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        APO 1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        APO 2
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        De interés
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="targed" href="#">
+                                        Logout
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" 
+                                        style="font-size:15px;" class="icon" 
+                                        onclick="myFunction()">&#9776;
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <img id="logo2" src="img/logo2.png" alt="">
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-5 col-xs-6">
-                        <div id="profile">
-                            <img id="photo-profile" src="img/profile.png" alt="">
-                            <div id="name-profile" class="purple">
-                                <h2>Perfil</h2>
-                                <p id="name-user" ng-bind="ctrl.user.name"></p>
+                <div id="header-main">
+                    <div class="clouds">
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-xs-6">
+                            <div id="profile">
+                                <img id="photo-profile" src="img/profile.png" alt="">
+                                <div id="name-profile" class="purple">
+                                    <h2>Perfil</h2>
+                                    <p id="name-user" ng-bind="ctrl.user.name"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-xs-6">
+                            <div id="data-user" class="purple">
+                                <p>
+                                    <b>Correo: {{ctrl.user.mail}}</b>
+                                </p>
+                                <p>
+                                    <b>Facultad:</b> {{ctrl.user.faculty}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <img src="img/bird.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="content">
+                <div id="points" class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <h2 class="title purple">Puntos <br> de experiencia</h2>
+                        <div id="content-experience">
+                            <h1> {{ctrl.user.points.experience}}</h1>
+                            <p>puntos de experiencia</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                                aria-valuemin="0" aria-valuemax="100" style="width:90%"></div>
+                            </div>
+                            <hr>
+                            <p>1135 puntos de experiencia te hacen falta para el siguiente nivel</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <h2 class="title purple">Puntos <br> de competencia</h2>
+                        <div class="row" id="content-competence">
+                            <div ng-if="ctrl.user.points.competition.gold>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.gold) track by $index" class="col-sm-4 col-xs-3">
+                                <img src="img/gold-medal.png" alt="">
+                            </div>
+                            <div ng-if="ctrl.user.points.competition.bronze>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.bronze) track by $index" class="col-sm-4 col-xs-3">
+                                <img src="img/bronze-medal.png" alt="">
+                            </div>
+                            <div ng-if="ctrl.user.points.competition.silver>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.silver) track by $index" class="col-sm-4 col-xs-3">
+                                <img src="img/silver-medal.png" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-5 col-xs-6">
-                        <div id="data-user" class="purple">
-                            <p>
-                                <b>Correo: {{ctrl.user.mail}}</b>
-                            </p>
-                            <p>
-                                <b>Facultad:</b> {{ctrl.user.faculty}}
-                            </p>
+                    <div class="col-sm-6 col-md-4">
+                        <h2 class="title purple">Puntos <br> de habilidad</h2>
+                        <div id="content-hability">
+                            <div id="abstraccion" ng-class="ctrl.dom.abstraction">
+                                <input type="number" min="0" max="100" ng-model="ctrl.user.points.skill.abstraction" ng-change="ctrl.abstraction()"/>
+                            </div>
+                            <div id="eje">
+                                <div class="palo" ng-class="ctrl.dom.paloLeft"></div>
+                                <div class="palo" ng-class="ctrl.dom.paloRight"></div>
+                            </div>
+                            <div id="programacion" ng-class="ctrl.dom.programming">
+                                <input type="number" min="0" max="100" ng-model="ctrl.user.points.skill.programming" ng-change="ctrl.programming()"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <img src="img/bird.png" alt="">
+                        <p ng-if="ctrl.user.points.skill.abstraction>50">¿Qué tal si practicas más las competencias de programación?</p>
+                        <p ng-if="ctrl.user.points.skill.abstraction<50">¿Qué tal si practicas más las competencias de abstracción?</p>
                     </div>
                 </div>
             </div>
-        </header>
-        <div id="content">
-            <div id="points" class="row">
-                <div class="col-sm-6 col-md-4">
-                    <h2 class="title purple">Puntos <br> de experiencia</h2>
-                    <div id="content-experience">
-                        <h1> {{ctrl.user.points.experience}}</h1>
-                        <p>puntos de experiencia</p>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60"
-                            aria-valuemin="0" aria-valuemax="100" style="width:90%"></div>
-                        </div>
-                        <hr>
-                        <p>1135 puntos de experiencia te hacen falta para el siguiente nivel</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <h2 class="title purple">Puntos <br> de competencia</h2>
-                    <div class="row" id="content-competence">
-                        <div ng-if="ctrl.user.points.competition.gold>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.gold) track by $index" class="col-sm-4 col-xs-3">
-                            <img src="img/gold-medal.png" alt="">
-                        </div>
-                        <div ng-if="ctrl.user.points.competition.bronze>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.bronze) track by $index" class="col-sm-4 col-xs-3">
-                            <img src="img/bronze-medal.png" alt="">
-                        </div>
-                        <div ng-if="ctrl.user.points.competition.silver>0" ng-repeat="i in ctrl.getNumber(ctrl.user.points.competition.silver) track by $index" class="col-sm-4 col-xs-3">
-                            <img src="img/silver-medal.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <h2 class="title purple">Puntos <br> de habilidad</h2>
-                    <div id="content-hability">
-                        <div id="abstraccion" ng-class="ctrl.dom.abstraction">
-                            <input type="number" min="0" max="100" ng-model="ctrl.user.points.skill.abstraction" ng-change="ctrl.abstraction()"/>
-                        </div>
-                        <div id="eje">
-                            <div class="palo" ng-class="ctrl.dom.paloLeft"></div>
-                            <div class="palo" ng-class="ctrl.dom.paloRight"></div>
-                        </div>
-                        <div id="programacion" ng-class="ctrl.dom.programming">
-                            <input type="number" min="0" max="100" ng-model="ctrl.user.points.skill.programming" ng-change="ctrl.programming()"/>
-                        </div>
-                    </div>
-                    <p ng-if="ctrl.user.points.skill.abstraction>50">¿Qué tal si practicas más las competencias de programación?</p>
-                    <p ng-if="ctrl.user.points.skill.abstraction<50">¿Qué tal si practicas más las competencias de abstracción?</p>
-                </div>
-            </div>
+            <footer>
+                <p>Universidad de los Andes | Vigilada Mineducación</p>
+                <p>Ediﬁcio Mario Laserna Cra 1Este No 19A - 40 Bogotá (Colombia) | Tel: [571] 3394949 Ext: 2860, 2861, 2862 | Fax: [571] 3324325 
+                    <br>© 2017 -Departamento de Ingeniería de Sistemas y Computación
+                </p>
+            </footer>
         </div>
-        <footer>
-            <p>Universidad de los Andes | Vigilada Mineducación</p>
-            <p>Ediﬁcio Mario Laserna Cra 1Este No 19A - 40 Bogotá (Colombia) | Tel: [571] 3394949 Ext: 2860, 2861, 2862 | Fax: [571] 3324325 
-                <br>© 2017 -Departamento de Ingeniería de Sistemas y Computación
-            </p>
-        </footer>
+        <div ng-if="!ctrl.isAuth">
+                <form class="form-signin">
+                    <div class="alert alert-danger" ng-if="ctrl.hasError">
+                        <strong>Error: </strong>El usuario no corresponde con la clave (todas son 1234).
+                    </div>
+                    <h2 class="form-signin-heading">Autenticar</h2>
+                    <label for="inputEmail" class="sr-only">Correo</label>
+                    <input ng-model="ctrl.userAccount" id="inputEmail" class="form-control" placeholder="Sólo el usuario" required="" autofocus="" type="text">@uniandes.edu.co
+                    <label for="inputPassword" class="sr-only">Clave</label>
+                    <input ng-model="ctrl.userPass" id="inputPassword" class="form-control" placeholder="Clave" required="" type="password">
+                    <div class="checkbox">
+                        <label>
+                        <input value="remember-me" type="checkbox"> Recordarme
+                        </label>
+                    </div>
+                    <button ng-click="ctrl.signIn()" class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+                </form>
+        </div>
     </body>
 </html>
