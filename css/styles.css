@@ -23,13 +23,10 @@
     font-family: WorkSans-Regular, Helvetica, Arial, sans-serif;
 }
 
-h1 {
-font-family: WorkSans-Bold, Helvetica, Arial, sans-serif;
-}
 b {
     font-family: WorkSans-SemiBold, Helvetica, Arial, sans-serif;
 }
-h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6{
     font-family: WorkSans-Medium, Helvetica, Arial, sans-serif;
     margin: 0
 }
@@ -137,10 +134,119 @@ li a.targed{
     line-height: 0.8em;
 }
 
+#points {
+    margin: 6em 3em;
+}
+#points>div{
+    border-right: 2px solid #dbdbdb4d;
+    padding: 0 3em;
+}
+#points>div:last-child{
+    border-right: none;
+}
+#content {
+    text-align: center;
+    padding-bottom: 17em;
+    background-image: url(../img/bg4.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100%;
+}
 
+.title {
+    letter-spacing: 2px;
+    margin-bottom: 2em;
+}
 
+#content-experience h1 {
+    font-size: 4em;
+}
+#content-experience p:first-child {
+    font-size: 1em;
+    margin-top: -2px;
+}
+#content-experience{
+    color: #ed6c2c;
+}
+#content-experience>hr{
+    border-top: 1px solid #b8b8b8;
+}
+#content-experience p:last-child {
+    color: #b8b8b8;
+    font-size: 0.95em;
+}
 
+#content-competence>div {
+    margin-bottom: 2.5em;
+}
+#content-competence img {
+    width: 70px;
+}
 
+.progress {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.7em;
+    margin-bottom: 2em;
+}
+.progress-bar {
+    background-color: #ed6c2c;
+    border-radius: 0.7em;
+}
+
+#content-hability{
+    margin:auto
+}
+#abstraccion{
+    background-image: url(../img/abstraccion.png);
+    height: 200px;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 199px;
+    width: 161px;
+}
+#content-hability input {
+    width: 60px;
+    top: 155px;
+    position: relative;
+}
+#eje{
+    background-image: url(../img/eje.png);
+    height: 296px;
+    width: 239px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 120px;
+}
+#programacion{
+    background-image: url(../img/programacion.png);
+    height: 203px;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 203px;
+    width: 161px;
+    left: 277px;
+}
+
+#content-hability+p {
+    color: #b8b8b8;
+    font-size: 0.95em;
+    margin-top: 26em;
+    padding: 2em;
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 2em;
+    color: rgba(255, 255, 255, 0.664);
+}
+footer>p:first-child {
+    font-size: 1.3em;
+}
+footer>p:last-child {
+    font-size: 1em;
+}
 
 
 
